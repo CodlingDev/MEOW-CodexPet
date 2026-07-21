@@ -53,14 +53,43 @@ MEOW-CodexPet/
 4. `1536 × 2288` WebP 아틀라스를 조립하고 chroma despill, v2 구조, 시선 의미와 연속성을 검증합니다.
 5. 통과한 결과만 `pets/meow/`와 `qa/meow/`에 반영합니다.
 
+## 결과 미리보기
+
+![MEOW Codex Pet v2 contact sheet](qa/meow/contact-sheet-extended.png)
+
+9개 표준 상태의 GIF와 방향 판독 결과는 [`qa/meow/`](qa/meow/)에서 확인할 수 있습니다. 최종 검증 수치와 경고 판정 근거는 [QA 보고서](docs/QA_REPORT.md)에 정리했습니다.
+
+## 설치
+
+저장소의 `pet.json`과 `spritesheet.webp`를 같은 Codex 펫 폴더에 복사합니다.
+
+```bash
+PET_DIR="${CODEX_HOME:-$HOME/.codex}/pets/meow"
+mkdir -p "$PET_DIR"
+cp pets/meow/pet.json "$PET_DIR/pet.json"
+cp pets/meow/spritesheet.webp "$PET_DIR/spritesheet.webp"
+```
+
+현재 개발 환경에는 `/Users/don/.codex/pets/meow`로 설치했으며, 저장소의 WebP와 설치본의 SHA-256이 일치하는 것을 확인했습니다.
+
+## 검증
+
+```bash
+python3 "${CODEX_HOME:-$HOME/.codex}/skills/hatch-pet/scripts/validate_atlas.py" \
+  pets/meow/spritesheet.webp \
+  --json-out /tmp/meow-validation.json \
+  --chroma-key '#00FFFF' \
+  --require-v2
+```
+
 ## 현재 상태
 
 - [x] 원본 저장소 및 Git 전략 초기화
 - [x] 기본 품종과 기준 에셋 선정
-- [ ] 기준 캐릭터 이미지 확정
-- [ ] 9개 표준 상태 제작
-- [ ] 16개 시선 방향 제작
-- [ ] v2 아틀라스 검증 및 패키징
+- [x] 기준 캐릭터 이미지 확정
+- [x] 9개 표준 상태 제작
+- [x] 16개 시선 방향 제작
+- [x] v2 아틀라스 검증 및 패키징
 
 ## Git 전략
 
