@@ -1,14 +1,15 @@
 # MEOW Codex Pet
 
-macOS용 [MEOW](https://github.com/CodlingDev/MEOW)의 기본 주황 고양이 에셋을 Codex용 애니메이션 펫으로 확장하는 프로젝트입니다.
+macOS용 [MEOW](https://github.com/CodlingDev/MEOW)의 기본 주황 고양이 에셋을 그대로 재사용해 Codex용 애니메이션 펫으로 패키징하는 프로젝트입니다.
 
-원본 픽셀 아트의 얼굴, 체형, 줄무늬, 색상과 움직임을 기준으로 삼고, Codex가 작업 중이거나 사용자 응답을 기다리는 상태를 같은 캐릭터 언어로 표현합니다.
+새 그림을 생성하거나 원본을 다시 그리지 않습니다. 원본 1x PNG의 보이는 픽셀은 그대로 유지하고, 고정 크롭과 프레임 선택, `running-right` 수평 반전만 적용합니다.
 
 ## 목표
 
 - MEOW의 기본 품종인 `cat_orange` 정체성을 보존합니다.
-- Codex Pet v2의 9개 표준 상태와 16개 시선 방향을 지원합니다.
-- 생성, 조립, 검증, 설치 과정을 재현 가능하게 기록합니다.
+- Codex Pet v2의 9개 표준 상태를 MEOW의 `idle`, `roll`, `stretch`, `play`, `sleep`으로 표현합니다.
+- 방향 반응은 사용하지 않으며 16개 방향 슬롯에는 동일한 `sleep` 프레임을 배치합니다.
+- 조립, 검증, 설치 과정을 재현 가능하게 기록합니다.
 - 최종 펫과 QA 산출물을 저장소에서 함께 관리합니다.
 
 ## Codex Pet v2 규격
@@ -19,45 +20,71 @@ macOS용 [MEOW](https://github.com/CodlingDev/MEOW)의 기본 주황 고양이 �
 | 아틀라스 | 8열 × 11행 |
 | 최종 크기 | `1536 × 2288` |
 | 표준 상태 | `idle`, `running-right`, `running-left`, `waving`, `jumping`, `failed`, `waiting`, `running`, `review` |
-| 시선 방향 | 12시 방향부터 시계 방향으로 22.5도 간격, 총 16개 |
+| 시선 방향 | 반응 없음, 16개 슬롯에 동일한 `sleep_0` 사용 |
 | 매니페스트 | `spriteVersionNumber: 2` |
 
 행별 의미와 필수 검증 기준은 [Codex Pet v2 제작 기준](docs/CODEX_PET_V2.md)에 정리합니다.
 
 ## 원본 에셋
 
-`CatFactory.makeCat`의 기본 품종인 `.orange`를 기준 캐릭터로 사용합니다. 원본 저장소의 추적된 1x PNG 중 정체성과 대표 동작을 설명하는 프레임만 `references/cat-orange/`에 복사했습니다.
+`CatFactory.makeCat`의 기본 품종인 `.orange`를 기준 캐릭터로 사용합니다. 실제 조립에 필요한 5개 상태의 추적된 1x PNG 전체를 `references/cat-orange/`에 보존합니다.
 
 - 기준 원본: `CodlingDev/MEOW`
 - 기준 커밋: `75a45c3ada731cac99e1df5a5bada598d8de64d2`
 - 원본 해상도: `256 × 256`, 알파 채널 포함
+- 포함 프레임: `idle` 2장, `roll` 18장, `stretch` 17장, `play` 12장, `sleep` 4장
 - 라이선스와 체크섬: [에셋 출처](docs/ASSET_PROVENANCE.md)
+
+## 상태 매핑
+
+| Codex 상태 | MEOW 상태 | 처리 |
+| --- | --- | --- |
+| `idle` | `sleep` | 4개 프레임을 6칸 루프로 구성 |
+| `running-right` | `roll` | 원본의 머리가 왼쪽이므로 선택 프레임을 수평 반전 |
+| `running-left` | `roll` | 원본 방향 그대로 사용 |
+| `waving` | `stretch` | 전체 동작에서 4개 대표 프레임 선택 |
+| `jumping` | `stretch` | 전체 동작에서 5개 대표 프레임 선택 |
+| `failed` | `play` | 사용자 상호작용이 필요한 상태를 8개 프레임으로 표현 |
+| `waiting` | `play` | 사용자 상호작용이 필요한 상태를 6개 프레임으로 표현 |
+| `running` | `idle` | 2개 원본 프레임을 반복 |
+| `review` | `idle` | 2개 원본 프레임을 반복 |
+| 방향 16칸 | `sleep_0` | 모두 동일한 프레임, 방향 반응 없음 |
 
 ## 프로젝트 구조
 
 ```text
 MEOW-CodexPet/
+├── scripts/                 # 원본 에셋 기반 결정적 아틀라스 조립
 ├── docs/                    # 규격, 출처, 제작 및 검증 기록
-├── references/cat-orange/   # MEOW 원본 기준 프레임
+├── references/cat-orange/   # 실제 사용하는 MEOW 원본 1x 프레임
 ├── pets/meow/               # 배포 가능한 pet.json과 spritesheet.webp
 └── qa/meow/                 # 최종 검증 결과와 시각 QA 산출물
 ```
 
-생성 도중의 프롬프트, 행 스트립, 추출 프레임과 중간 아틀라스는 `.hatch/`에서 작업하며 Git에 포함하지 않습니다.
+조립 중 추출한 셀은 `.hatch/`에서 작업하며 Git에 포함하지 않습니다.
 
 ## 개발 흐름
 
-1. `references/cat-orange/`의 프레임으로 캐릭터 정체성을 고정합니다.
-2. Codex의 `hatch-pet`과 `imagegen` 워크플로로 기준 이미지와 상태별 행을 제작합니다.
-3. 9개 표준 상태를 먼저 검증한 뒤 4개 방위 기준과 16개 시선 방향을 제작합니다.
-4. `1536 × 2288` WebP 아틀라스를 조립하고 chroma despill, v2 구조, 시선 의미와 연속성을 검증합니다.
+1. `references/cat-orange/`에서 원본 상태와 프레임 수를 검증합니다.
+2. 모든 원본 캔버스에 동일한 `(48, 24, 240, 232)` 크롭을 적용합니다.
+3. 상태별 대표 프레임을 선택하고 `running-right`만 셀 단위로 수평 반전합니다.
+4. `1536 × 2288` lossless WebP 아틀라스를 조립하고 픽셀 왕복과 v2 구조를 검증합니다.
 5. 통과한 결과만 `pets/meow/`와 `qa/meow/`에 반영합니다.
 
 ## 결과 미리보기
 
 ![MEOW Codex Pet v2 contact sheet](qa/meow/contact-sheet-extended.png)
 
-9개 표준 상태의 GIF와 방향 판독 결과는 [`qa/meow/`](qa/meow/)에서 확인할 수 있습니다. 최종 검증 수치와 경고 판정 근거는 [QA 보고서](docs/QA_REPORT.md)에 정리했습니다.
+9개 표준 상태의 GIF와 방향 고정 결과는 [`qa/meow/`](qa/meow/)에서 확인할 수 있습니다. 최종 검증 결과는 [QA 보고서](docs/QA_REPORT.md)에 정리했습니다.
+
+## 빌드
+
+Pillow를 설치한 뒤 아틀라스를 재현할 수 있습니다.
+
+```bash
+python3 -m pip install -r requirements.txt
+make build
+```
 
 ## 설치
 
@@ -70,25 +97,21 @@ cp pets/meow/pet.json "$PET_DIR/pet.json"
 cp pets/meow/spritesheet.webp "$PET_DIR/spritesheet.webp"
 ```
 
-현재 개발 환경에는 `/Users/don/.codex/pets/meow`로 설치했으며, 저장소의 WebP와 설치본의 SHA-256이 일치하는 것을 확인했습니다.
-
 ## 검증
 
 ```bash
-python3 "${CODEX_HOME:-$HOME/.codex}/skills/hatch-pet/scripts/validate_atlas.py" \
-  pets/meow/spritesheet.webp \
-  --json-out /tmp/meow-validation.json \
-  --chroma-key '#00FFFF' \
-  --require-v2
+make qa
 ```
+
+검증은 lossless WebP 픽셀 왕복, `1536 × 2288` v2 구조, 투명 셀, 미리보기 GIF와 전체 contact sheet를 확인합니다.
 
 ## 현재 상태
 
 - [x] 원본 저장소 및 Git 전략 초기화
 - [x] 기본 품종과 기준 에셋 선정
-- [x] 기준 캐릭터 이미지 확정
-- [x] 9개 표준 상태 제작
-- [x] 16개 시선 방향 제작
+- [x] 원본 5개 상태 전체 프레임 보존
+- [x] 사용자 지정 9개 상태 매핑
+- [x] 방향 반응 비활성화
 - [x] v2 아틀라스 검증 및 패키징
 
 ## Git 전략

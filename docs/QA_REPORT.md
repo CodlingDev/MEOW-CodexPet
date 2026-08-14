@@ -2,7 +2,7 @@
 
 ## 결론
 
-MEOW 기본 주황 고양이로 제작한 Codex Pet v2 아틀라스가 구조 검증, chroma despill, 3인 블라인드 방향 판독과 독립 시각 QA를 통과했습니다.
+MEOW 기본 주황 고양이의 원본 1x PNG만으로 조립한 Codex Pet v2 아틀라스가 lossless 픽셀 왕복과 구조 검증을 통과했습니다.
 
 ## 최종 결과
 
@@ -11,44 +11,48 @@ MEOW 기본 주황 고양이로 제작한 Codex Pet v2 아틀라스가 구조 �
 | 아틀라스 크기 | `1536 × 2288` |
 | 레이아웃 | 8열 × 11행, 셀 `192 × 208` |
 | 스프라이트 규격 | `spriteVersionNumber: 2` |
-| 표준 상태 | 9개 행 통과 |
-| 시선 방향 | 16개, 시계 방향 22.5도 간격 |
+| 원본 에셋 | MEOW `cat_orange` 1x PNG 53장 |
+| 새 그림 생성 | 없음 |
+| 리사이즈 | 없음 |
+| 기하 변환 | `running-right` 수평 반전만 적용 |
+| 방향 반응 | 없음, 16개 셀 모두 `sleep_0` |
+| WebP 픽셀 왕복 | 통과 |
 | 투명 RGB 잔여 픽셀 | 0 |
-| Chroma despill | `ok: true`, alpha 보존 |
 | 프레임 구조 검사 | 오류 0, 경고 0 |
-| 블라인드 방향 검사 | `ok: true`, 하드 게이트 4방향 통과 |
-| 독립 최종 시각 QA | `pass` |
-| WebP SHA-256 | `600dd9ecb88c2ac651719b908a4305c4be7841c64f9af153ef4e6065667d6f9d` |
+| 독립 최종 시각 QA | `pass`, findings 없음 |
+| WebP SHA-256 | `46ee76e772cd689589551a7dd7d668a8a3adab2a750f51cf2e0631390465e668` |
 
-## 방향 보정
+## 프레임 구성
 
-첫 블라인드 검사에서는 270도가 뒷모습처럼 읽히고 0도와 180도의 위·아래 차이가 약해 하드 게이트를 통과하지 못했습니다. 표준 9개 상태는 유지하고 방향 2개 행만 다시 제작했습니다.
+- `sleep`: `idle`과 방향 고정 셀
+- `roll`: 왼쪽 원본, 오른쪽 수평 반전
+- `stretch`: `waving`, `jumping`
+- `play`: 사용자 상호작용이 필요한 `failed`, `waiting`
+- `idle`: `running`, `review`
 
-- 0도: 눈선과 주둥이를 들어 명확한 위 방향으로 보정했습니다.
-- 180도: 턱과 눈을 가슴 쪽으로 내려 명확한 아래 방향으로 보정했습니다.
-- 270도: 흰 볼, 한쪽 눈과 코가 보이는 완전한 왼쪽 프로필로 보정했습니다.
-- 270도 주변: 꼬리와 몸통 폭을 안쪽으로 줄여 최종 셀 가장자리 검사를 통과했습니다.
+각 행의 선택 인덱스와 원본 체크섬은 [`asset-mapping.json`](../qa/meow/asset-mapping.json)에 기록했습니다.
 
-보정 후 격리된 리뷰어 3명이 90도/270도와 0도/180도 하드 게이트를 모두 같은 방향으로 판독했습니다.
+## 검증 명령
 
-## 승인된 경고
+```bash
+make PYTHON=/Users/don/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 qa
+```
 
-얕은 중간 각도 일부는 무라벨 단일 이미지에서 수평 또는 수직 축이 모호하다는 경고가 남았습니다. 라벨이 있는 정상 크기 순환에서는 모든 프레임이 의도한 사분면을 유지하고 역전이 없었으며, 독립 최종 시각 QA도 눈에 띄는 크기 튐이나 실루엣 단절이 없다고 판정했습니다.
+결과:
 
-연속성 수치 경고도 동일한 기준으로 검토했습니다. 알파 홀, 잘림, 잘못된 방위, 캐릭터 정체성 변화는 없습니다. 승인 근거는 [`blind-review-resolution.json`](../qa/meow/blind-review-resolution.json)에 보존합니다.
+- `scripts/build_pet_atlas.py`: 성공
+- `validate_atlas.py --require-v2`: `ok: true`
+- `make_contact_sheet.py`: 성공
+- `make_direction_qa_sheet.py`: 성공
+- `render_animation_previews.py`: 9개 GIF 생성 성공
 
 ## QA 산출물
 
+- [`asset-mapping.json`](../qa/meow/asset-mapping.json): 원본 상태, 선택 인덱스, 체크섬과 반전 여부
 - [`validation-extended.json`](../qa/meow/validation-extended.json): v2 구조와 투명도 검증
-- [`chroma-despill-extended.json`](../qa/meow/chroma-despill-extended.json): 단일 despill 결과
-- [`contact-sheet-extended.png`](../qa/meow/contact-sheet-extended.png): 11개 행 전체 접촉표
-- [`look-directions.png`](../qa/meow/look-directions.png): 중립 상태와 16방향 비교표
-- [`direction-blind-validation.json`](../qa/meow/direction-blind-validation.json): 3인 블라인드 다수결 결과
-- [`direction-semantics.json`](../qa/meow/direction-semantics.json): 방향별 의미 판정
-- [`look-continuity.json`](../qa/meow/look-continuity.json): 인접 방향 연속성 수치
+- [`transparency.json`](../qa/meow/transparency.json): 원본 알파 보존과 hidden RGB 정리 결과
+- [`contact-sheet-extended.png`](../qa/meow/contact-sheet-extended.png): 11개 행 전체 contact sheet
+- [`look-directions.png`](../qa/meow/look-directions.png): 방향 16칸이 동일한 프레임인지 확인
 - [`previews/`](../qa/meow/previews/): 9개 표준 상태 GIF
-- [`run-summary.json`](../qa/meow/run-summary.json): 최종 실행 요약
-
-## 설치 확인
-
-저장소 패키지와 `/Users/don/.codex/pets/meow` 설치본의 `spritesheet.webp` SHA-256을 비교해 동일함을 확인했습니다. `pet.json`은 `id: meow`, `spriteVersionNumber: 2`, `spritesheetPath: spritesheet.webp`를 사용합니다.
+- [`review.json`](../qa/meow/review.json): 원본 및 조립 불변식 검사
+- [`final-visual-qa.txt`](../qa/meow/final-visual-qa.txt): 독립 시각 검토 결과
