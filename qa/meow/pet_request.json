@@ -1,0 +1,16 @@
+{
+  "pet_id": "meow",
+  "display_name": "MEOW",
+  "description": "The original orange tabby from the macOS MEOW app, using its original animations.",
+  "sprite_version_number": 2,
+  "atlas": {
+    "columns": 8,
+    "rows": 11,
+    "cell_width": 192,
+    "cell_height": 208,
+    "width": 1536,
+    "height": 2288
+  },
+  "direction_response": false,
+  "asset_mapping": "qa/meow/asset-mapping.json"
+}

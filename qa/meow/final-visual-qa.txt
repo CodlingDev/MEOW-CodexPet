@@ -1,0 +1,4 @@
+visual_qa=pass
+qa_note=waving과 jumping 모두 시작→하강→완전 신장→복귀가 완결되며 마지막 자세가 첫 자세와 일치해 경계 점프·역재생·잘림·크기 튐 없이 자연스럽게 반복됩니다.
+review_warnings=none
+repair_notes=none

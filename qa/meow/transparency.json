@@ -1,0 +1,7 @@
+{
+  "ok": true,
+  "applied": false,
+  "reason": "Original assets already use transparent RGBA backgrounds; no chroma despill was needed.",
+  "hidden_rgb_cleared": true,
+  "visible_pixels_changed": false
+}

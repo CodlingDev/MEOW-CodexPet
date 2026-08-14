@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "spriteVersionNumber": 2,
+  "spritesheet": "pets/meow/spritesheet.webp",
+  "spritesheet_sha256": "1d17feb20b0b5d15b71f0092effc55d565c805423faad6956a0e4569c94855be",
+  "asset_mapping": "qa/meow/asset-mapping.json",
+  "review": "qa/meow/review.json",
+  "validation": "qa/meow/validation-extended.json",
+  "contact_sheet": "qa/meow/contact-sheet-extended.png",
+  "previews": "qa/meow/previews",
+  "final_visual_qa": "qa/meow/final-visual-qa.txt",
+  "direction_response": false
+}

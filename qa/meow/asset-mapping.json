@@ -1,0 +1,1436 @@
+{
+  "ok": true,
+  "source": "CodlingDev/MEOW cat_orange 1x PNG assets",
+  "source_commit": "75a45c3ada731cac99e1df5a5bada598d8de64d2",
+  "source_asset_count": 53,
+  "source_states": {
+    "idle": 2,
+    "roll": 18,
+    "stretch": 17,
+    "play": 12,
+    "sleep": 4
+  },
+  "source_canvas": [
+    256,
+    256
+  ],
+  "cell": [
+    192,
+    208
+  ],
+  "crop_box": [
+    48,
+    24,
+    240,
+    232
+  ],
+  "resized": false,
+  "redrawn": false,
+  "generated": false,
+  "direction_response": false,
+  "direction_cells": "All 16 cells use the unchanged sleep frame 0.",
+  "runtime_approximation": {
+    "runtime_modified": false,
+    "idle": {
+      "requested_slowdown": 2.0,
+      "technique": "Hold three source poses across six runtime slots.",
+      "source_indices": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    "roll": {
+      "requested_slowdown": 1.5,
+      "estimated_pose_change_slowdown": 1.6,
+      "technique": "Reduce one cycle from eight visible pose changes to five.",
+      "source_indices": [
+        0,
+        0,
+        4,
+        8,
+        12,
+        16,
+        16,
+        0
+      ]
+    },
+    "stretch": {
+      "requested_slowdown": 3.0,
+      "requested_visible_repetitions": 1,
+      "runtime_repetitions": 3,
+      "achieved_slowdown": null,
+      "technique": "Preserve one complete source stretch cycle in every runtime cycle.",
+      "waving_source_indices": [
+        0,
+        5,
+        10,
+        16
+      ],
+      "jumping_source_indices": [
+        0,
+        4,
+        8,
+        12,
+        16
+      ],
+      "limitation": "The runtime still repeats the complete cycle three times."
+    },
+    "seated_idle": {
+      "affected_states": [
+        "running",
+        "review"
+      ],
+      "technique": "Hold each seated source pose for three consecutive runtime slots.",
+      "source_indices": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "rows": [
+    {
+      "state": "idle",
+      "source_state": "sleep",
+      "source_indices": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "running-right",
+      "source_state": "roll",
+      "source_indices": [
+        0,
+        0,
+        4,
+        8,
+        12,
+        16,
+        16,
+        0
+      ],
+      "mirrored": true
+    },
+    {
+      "state": "running-left",
+      "source_state": "roll",
+      "source_indices": [
+        0,
+        0,
+        4,
+        8,
+        12,
+        16,
+        16,
+        0
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "waving",
+      "source_state": "stretch",
+      "source_indices": [
+        0,
+        5,
+        10,
+        16
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "jumping",
+      "source_state": "stretch",
+      "source_indices": [
+        0,
+        4,
+        8,
+        12,
+        16
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "failed",
+      "source_state": "play",
+      "source_indices": [
+        0,
+        2,
+        3,
+        5,
+        6,
+        8,
+        9,
+        11
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "waiting",
+      "source_state": "play",
+      "source_indices": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "running",
+      "source_state": "idle",
+      "source_indices": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "review",
+      "source_state": "idle",
+      "source_indices": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "look-000-to-157.5",
+      "source_state": "sleep",
+      "source_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "look-180-to-337.5",
+      "source_state": "sleep",
+      "source_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mirrored": false
+    }
+  ],
+  "frames": [
+    {
+      "state": "idle",
+      "row": 0,
+      "column": 0,
+      "source_state": "sleep",
+      "source_index": 0,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_0.png",
+      "source_sha256": "51c6fe875f20bcc6ff3882a2e29f69e627f747a332d84873933c7365001a09d2",
+      "source_alpha_box": [
+        57,
+        73,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "idle",
+      "row": 0,
+      "column": 1,
+      "source_state": "sleep",
+      "source_index": 1,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_1.png",
+      "source_sha256": "48b970f78f129a7edd1a39cf69b1f93c4b64a4ff2aaae88a4050c4579ede5311",
+      "source_alpha_box": [
+        61,
+        85,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "idle",
+      "row": 0,
+      "column": 2,
+      "source_state": "sleep",
+      "source_index": 1,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_1.png",
+      "source_sha256": "48b970f78f129a7edd1a39cf69b1f93c4b64a4ff2aaae88a4050c4579ede5311",
+      "source_alpha_box": [
+        61,
+        85,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "idle",
+      "row": 0,
+      "column": 3,
+      "source_state": "sleep",
+      "source_index": 1,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_1.png",
+      "source_sha256": "48b970f78f129a7edd1a39cf69b1f93c4b64a4ff2aaae88a4050c4579ede5311",
+      "source_alpha_box": [
+        61,
+        85,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "idle",
+      "row": 0,
+      "column": 4,
+      "source_state": "sleep",
+      "source_index": 2,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_2.png",
+      "source_sha256": "906a15df08f986c32ecc4885b5fb6183cbebc25d35e7c168768b312b67a1afa6",
+      "source_alpha_box": [
+        61,
+        93,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "idle",
+      "row": 0,
+      "column": 5,
+      "source_state": "sleep",
+      "source_index": 2,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_2.png",
+      "source_sha256": "906a15df08f986c32ecc4885b5fb6183cbebc25d35e7c168768b312b67a1afa6",
+      "source_alpha_box": [
+        61,
+        93,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "running-right",
+      "row": 1,
+      "column": 0,
+      "source_state": "roll",
+      "source_index": 0,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_00.png",
+      "source_sha256": "3f3276f3391a525084f78cd6b7ced3ba41537999ba5a96af9177a6c57588a7f3",
+      "source_alpha_box": [
+        52,
+        104,
+        228,
+        172
+      ],
+      "mirrored": true
+    },
+    {
+      "state": "running-right",
+      "row": 1,
+      "column": 1,
+      "source_state": "roll",
+      "source_index": 0,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_00.png",
+      "source_sha256": "3f3276f3391a525084f78cd6b7ced3ba41537999ba5a96af9177a6c57588a7f3",
+      "source_alpha_box": [
+        52,
+        104,
+        228,
+        172
+      ],
+      "mirrored": true
+    },
+    {
+      "state": "running-right",
+      "row": 1,
+      "column": 2,
+      "source_state": "roll",
+      "source_index": 4,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_04.png",
+      "source_sha256": "3b8212f812698502ea64972578457b92234b11a0978dc747c25e045af1205a6d",
+      "source_alpha_box": [
+        52,
+        84,
+        236,
+        168
+      ],
+      "mirrored": true
+    },
+    {
+      "state": "running-right",
+      "row": 1,
+      "column": 3,
+      "source_state": "roll",
+      "source_index": 8,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_08.png",
+      "source_sha256": "378de8ed736b74fabda2c42c55d3661baa57dcfb994dd5293043d489eea35551",
+      "source_alpha_box": [
+        52,
+        96,
+        236,
+        168
+      ],
+      "mirrored": true
+    },
+    {
+      "state": "running-right",
+      "row": 1,
+      "column": 4,
+      "source_state": "roll",
+      "source_index": 12,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_12.png",
+      "source_sha256": "1e27e477afed376f45a80ae8900c0b63fe5b6350ec044e358b5aecbd58401f21",
+      "source_alpha_box": [
+        52,
+        88,
+        236,
+        168
+      ],
+      "mirrored": true
+    },
+    {
+      "state": "running-right",
+      "row": 1,
+      "column": 5,
+      "source_state": "roll",
+      "source_index": 16,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_16.png",
+      "source_sha256": "bd6df7690ea5b1f8087e2fb303e27f82892507412b993cccf258d56fb01f683c",
+      "source_alpha_box": [
+        52,
+        96,
+        228,
+        168
+      ],
+      "mirrored": true
+    },
+    {
+      "state": "running-right",
+      "row": 1,
+      "column": 6,
+      "source_state": "roll",
+      "source_index": 16,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_16.png",
+      "source_sha256": "bd6df7690ea5b1f8087e2fb303e27f82892507412b993cccf258d56fb01f683c",
+      "source_alpha_box": [
+        52,
+        96,
+        228,
+        168
+      ],
+      "mirrored": true
+    },
+    {
+      "state": "running-right",
+      "row": 1,
+      "column": 7,
+      "source_state": "roll",
+      "source_index": 0,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_00.png",
+      "source_sha256": "3f3276f3391a525084f78cd6b7ced3ba41537999ba5a96af9177a6c57588a7f3",
+      "source_alpha_box": [
+        52,
+        104,
+        228,
+        172
+      ],
+      "mirrored": true
+    },
+    {
+      "state": "running-left",
+      "row": 2,
+      "column": 0,
+      "source_state": "roll",
+      "source_index": 0,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_00.png",
+      "source_sha256": "3f3276f3391a525084f78cd6b7ced3ba41537999ba5a96af9177a6c57588a7f3",
+      "source_alpha_box": [
+        52,
+        104,
+        228,
+        172
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "running-left",
+      "row": 2,
+      "column": 1,
+      "source_state": "roll",
+      "source_index": 0,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_00.png",
+      "source_sha256": "3f3276f3391a525084f78cd6b7ced3ba41537999ba5a96af9177a6c57588a7f3",
+      "source_alpha_box": [
+        52,
+        104,
+        228,
+        172
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "running-left",
+      "row": 2,
+      "column": 2,
+      "source_state": "roll",
+      "source_index": 4,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_04.png",
+      "source_sha256": "3b8212f812698502ea64972578457b92234b11a0978dc747c25e045af1205a6d",
+      "source_alpha_box": [
+        52,
+        84,
+        236,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "running-left",
+      "row": 2,
+      "column": 3,
+      "source_state": "roll",
+      "source_index": 8,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_08.png",
+      "source_sha256": "378de8ed736b74fabda2c42c55d3661baa57dcfb994dd5293043d489eea35551",
+      "source_alpha_box": [
+        52,
+        96,
+        236,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "running-left",
+      "row": 2,
+      "column": 4,
+      "source_state": "roll",
+      "source_index": 12,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_12.png",
+      "source_sha256": "1e27e477afed376f45a80ae8900c0b63fe5b6350ec044e358b5aecbd58401f21",
+      "source_alpha_box": [
+        52,
+        88,
+        236,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "running-left",
+      "row": 2,
+      "column": 5,
+      "source_state": "roll",
+      "source_index": 16,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_16.png",
+      "source_sha256": "bd6df7690ea5b1f8087e2fb303e27f82892507412b993cccf258d56fb01f683c",
+      "source_alpha_box": [
+        52,
+        96,
+        228,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "running-left",
+      "row": 2,
+      "column": 6,
+      "source_state": "roll",
+      "source_index": 16,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_16.png",
+      "source_sha256": "bd6df7690ea5b1f8087e2fb303e27f82892507412b993cccf258d56fb01f683c",
+      "source_alpha_box": [
+        52,
+        96,
+        228,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "running-left",
+      "row": 2,
+      "column": 7,
+      "source_state": "roll",
+      "source_index": 0,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_00.png",
+      "source_sha256": "3f3276f3391a525084f78cd6b7ced3ba41537999ba5a96af9177a6c57588a7f3",
+      "source_alpha_box": [
+        52,
+        104,
+        228,
+        172
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "waving",
+      "row": 3,
+      "column": 0,
+      "source_state": "stretch",
+      "source_index": 0,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_0.png",
+      "source_sha256": "de1230612bb6ade6fd60b68967612357bad61f4078490c55c8fd0dba3530b2e1",
+      "source_alpha_box": [
+        64,
+        68,
+        208,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "waving",
+      "row": 3,
+      "column": 1,
+      "source_state": "stretch",
+      "source_index": 5,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_5.png",
+      "source_sha256": "0dc0548f3855e4bad10f58228f38ec855f3742e34ca04632748b1e2dcd4ca65f",
+      "source_alpha_box": [
+        64,
+        80,
+        216,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "waving",
+      "row": 3,
+      "column": 2,
+      "source_state": "stretch",
+      "source_index": 10,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_10.png",
+      "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
+      "source_alpha_box": [
+        64,
+        88,
+        220,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "waving",
+      "row": 3,
+      "column": 3,
+      "source_state": "stretch",
+      "source_index": 16,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_16.png",
+      "source_sha256": "de1230612bb6ade6fd60b68967612357bad61f4078490c55c8fd0dba3530b2e1",
+      "source_alpha_box": [
+        64,
+        68,
+        208,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "jumping",
+      "row": 4,
+      "column": 0,
+      "source_state": "stretch",
+      "source_index": 0,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_0.png",
+      "source_sha256": "de1230612bb6ade6fd60b68967612357bad61f4078490c55c8fd0dba3530b2e1",
+      "source_alpha_box": [
+        64,
+        68,
+        208,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "jumping",
+      "row": 4,
+      "column": 1,
+      "source_state": "stretch",
+      "source_index": 4,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_4.png",
+      "source_sha256": "36795810a3e376786a4fc125587bd6a25431bb9f9a727693b1cf58753bde018b",
+      "source_alpha_box": [
+        68,
+        80,
+        212,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "jumping",
+      "row": 4,
+      "column": 2,
+      "source_state": "stretch",
+      "source_index": 8,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_8.png",
+      "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
+      "source_alpha_box": [
+        64,
+        88,
+        220,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "jumping",
+      "row": 4,
+      "column": 3,
+      "source_state": "stretch",
+      "source_index": 12,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_12.png",
+      "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
+      "source_alpha_box": [
+        64,
+        88,
+        220,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "jumping",
+      "row": 4,
+      "column": 4,
+      "source_state": "stretch",
+      "source_index": 16,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_16.png",
+      "source_sha256": "de1230612bb6ade6fd60b68967612357bad61f4078490c55c8fd0dba3530b2e1",
+      "source_alpha_box": [
+        64,
+        68,
+        208,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "failed",
+      "row": 5,
+      "column": 0,
+      "source_state": "play",
+      "source_index": 0,
+      "source_path": "references/cat-orange/play/cat_orange_play_00.png",
+      "source_sha256": "17ba4d28fc98fe7968e1516d26d61ed23675026082f4157a6f1866f54b6be34c",
+      "source_alpha_box": [
+        68,
+        64,
+        208,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "failed",
+      "row": 5,
+      "column": 1,
+      "source_state": "play",
+      "source_index": 2,
+      "source_path": "references/cat-orange/play/cat_orange_play_02.png",
+      "source_sha256": "5b0b36007e990a5727a05a5378ae47d0291ce8dfadb8608987b6b8d8d70b6a93",
+      "source_alpha_box": [
+        56,
+        64,
+        208,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "failed",
+      "row": 5,
+      "column": 2,
+      "source_state": "play",
+      "source_index": 3,
+      "source_path": "references/cat-orange/play/cat_orange_play_03.png",
+      "source_sha256": "9c8c9be3f2cda4a6d52936d44693db77725851df383d2ca997cbed1d99417128",
+      "source_alpha_box": [
+        56,
+        64,
+        208,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "failed",
+      "row": 5,
+      "column": 3,
+      "source_state": "play",
+      "source_index": 5,
+      "source_path": "references/cat-orange/play/cat_orange_play_05.png",
+      "source_sha256": "6f87ceaae072d376910cb7ee1ecc4700ce5021107f69179577f4ae987fdfc504",
+      "source_alpha_box": [
+        56,
+        64,
+        208,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "failed",
+      "row": 5,
+      "column": 4,
+      "source_state": "play",
+      "source_index": 6,
+      "source_path": "references/cat-orange/play/cat_orange_play_06.png",
+      "source_sha256": "44b8c191e168e4201865047af050d1555150d7160f92c0aed8a9fb0a7aa637c5",
+      "source_alpha_box": [
+        56,
+        64,
+        208,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "failed",
+      "row": 5,
+      "column": 5,
+      "source_state": "play",
+      "source_index": 8,
+      "source_path": "references/cat-orange/play/cat_orange_play_08.png",
+      "source_sha256": "2d8e49806798e16937e7d92088550cf7914311d2a3a983fe475f1d36651660b5",
+      "source_alpha_box": [
+        60,
+        64,
+        208,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "failed",
+      "row": 5,
+      "column": 6,
+      "source_state": "play",
+      "source_index": 9,
+      "source_path": "references/cat-orange/play/cat_orange_play_09.png",
+      "source_sha256": "c529b418860c516db1d877369d09607f60f6c651e237d92e8b9ae09b54f8f906",
+      "source_alpha_box": [
+        68,
+        64,
+        208,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "failed",
+      "row": 5,
+      "column": 7,
+      "source_state": "play",
+      "source_index": 11,
+      "source_path": "references/cat-orange/play/cat_orange_play_11.png",
+      "source_sha256": "4245e754dc59ee0cbfb1d85e111ba5f9504ebc757791e9cff5eae37431112520",
+      "source_alpha_box": [
+        72,
+        64,
+        208,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "waiting",
+      "row": 6,
+      "column": 0,
+      "source_state": "play",
+      "source_index": 0,
+      "source_path": "references/cat-orange/play/cat_orange_play_00.png",
+      "source_sha256": "17ba4d28fc98fe7968e1516d26d61ed23675026082f4157a6f1866f54b6be34c",
+      "source_alpha_box": [
+        68,
+        64,
+        208,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "waiting",
+      "row": 6,
+      "column": 1,
+      "source_state": "play",
+      "source_index": 2,
+      "source_path": "references/cat-orange/play/cat_orange_play_02.png",
+      "source_sha256": "5b0b36007e990a5727a05a5378ae47d0291ce8dfadb8608987b6b8d8d70b6a93",
+      "source_alpha_box": [
+        56,
+        64,
+        208,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "waiting",
+      "row": 6,
+      "column": 2,
+      "source_state": "play",
+      "source_index": 4,
+      "source_path": "references/cat-orange/play/cat_orange_play_04.png",
+      "source_sha256": "f7b65a9ad1b35f7479a2a299f97f299e3c11f7da333346ea148029ea272843e8",
+      "source_alpha_box": [
+        56,
+        64,
+        208,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "waiting",
+      "row": 6,
+      "column": 3,
+      "source_state": "play",
+      "source_index": 6,
+      "source_path": "references/cat-orange/play/cat_orange_play_06.png",
+      "source_sha256": "44b8c191e168e4201865047af050d1555150d7160f92c0aed8a9fb0a7aa637c5",
+      "source_alpha_box": [
+        56,
+        64,
+        208,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "waiting",
+      "row": 6,
+      "column": 4,
+      "source_state": "play",
+      "source_index": 8,
+      "source_path": "references/cat-orange/play/cat_orange_play_08.png",
+      "source_sha256": "2d8e49806798e16937e7d92088550cf7914311d2a3a983fe475f1d36651660b5",
+      "source_alpha_box": [
+        60,
+        64,
+        208,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "waiting",
+      "row": 6,
+      "column": 5,
+      "source_state": "play",
+      "source_index": 10,
+      "source_path": "references/cat-orange/play/cat_orange_play_10.png",
+      "source_sha256": "e4d8537337f1da3fbf09e75efd22420dd0689e8ec7e79268497507a38a70b1be",
+      "source_alpha_box": [
+        72,
+        64,
+        208,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "running",
+      "row": 7,
+      "column": 0,
+      "source_state": "idle",
+      "source_index": 0,
+      "source_path": "references/cat-orange/idle/cat_orange_idle_0.png",
+      "source_sha256": "403dc3df5741bf2fe9ca67a7eed5bc399be52d7f39a0130c22f85cef3502d828",
+      "source_alpha_box": [
+        89,
+        65,
+        191,
+        171
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "running",
+      "row": 7,
+      "column": 1,
+      "source_state": "idle",
+      "source_index": 0,
+      "source_path": "references/cat-orange/idle/cat_orange_idle_0.png",
+      "source_sha256": "403dc3df5741bf2fe9ca67a7eed5bc399be52d7f39a0130c22f85cef3502d828",
+      "source_alpha_box": [
+        89,
+        65,
+        191,
+        171
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "running",
+      "row": 7,
+      "column": 2,
+      "source_state": "idle",
+      "source_index": 0,
+      "source_path": "references/cat-orange/idle/cat_orange_idle_0.png",
+      "source_sha256": "403dc3df5741bf2fe9ca67a7eed5bc399be52d7f39a0130c22f85cef3502d828",
+      "source_alpha_box": [
+        89,
+        65,
+        191,
+        171
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "running",
+      "row": 7,
+      "column": 3,
+      "source_state": "idle",
+      "source_index": 1,
+      "source_path": "references/cat-orange/idle/cat_orange_idle_1.png",
+      "source_sha256": "a32f9cec8146216810ac3d6c5ace271ef87e4333bb36019c3aa544901da2503f",
+      "source_alpha_box": [
+        89,
+        69,
+        195,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "running",
+      "row": 7,
+      "column": 4,
+      "source_state": "idle",
+      "source_index": 1,
+      "source_path": "references/cat-orange/idle/cat_orange_idle_1.png",
+      "source_sha256": "a32f9cec8146216810ac3d6c5ace271ef87e4333bb36019c3aa544901da2503f",
+      "source_alpha_box": [
+        89,
+        69,
+        195,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "running",
+      "row": 7,
+      "column": 5,
+      "source_state": "idle",
+      "source_index": 1,
+      "source_path": "references/cat-orange/idle/cat_orange_idle_1.png",
+      "source_sha256": "a32f9cec8146216810ac3d6c5ace271ef87e4333bb36019c3aa544901da2503f",
+      "source_alpha_box": [
+        89,
+        69,
+        195,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "review",
+      "row": 8,
+      "column": 0,
+      "source_state": "idle",
+      "source_index": 0,
+      "source_path": "references/cat-orange/idle/cat_orange_idle_0.png",
+      "source_sha256": "403dc3df5741bf2fe9ca67a7eed5bc399be52d7f39a0130c22f85cef3502d828",
+      "source_alpha_box": [
+        89,
+        65,
+        191,
+        171
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "review",
+      "row": 8,
+      "column": 1,
+      "source_state": "idle",
+      "source_index": 0,
+      "source_path": "references/cat-orange/idle/cat_orange_idle_0.png",
+      "source_sha256": "403dc3df5741bf2fe9ca67a7eed5bc399be52d7f39a0130c22f85cef3502d828",
+      "source_alpha_box": [
+        89,
+        65,
+        191,
+        171
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "review",
+      "row": 8,
+      "column": 2,
+      "source_state": "idle",
+      "source_index": 0,
+      "source_path": "references/cat-orange/idle/cat_orange_idle_0.png",
+      "source_sha256": "403dc3df5741bf2fe9ca67a7eed5bc399be52d7f39a0130c22f85cef3502d828",
+      "source_alpha_box": [
+        89,
+        65,
+        191,
+        171
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "review",
+      "row": 8,
+      "column": 3,
+      "source_state": "idle",
+      "source_index": 1,
+      "source_path": "references/cat-orange/idle/cat_orange_idle_1.png",
+      "source_sha256": "a32f9cec8146216810ac3d6c5ace271ef87e4333bb36019c3aa544901da2503f",
+      "source_alpha_box": [
+        89,
+        69,
+        195,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "review",
+      "row": 8,
+      "column": 4,
+      "source_state": "idle",
+      "source_index": 1,
+      "source_path": "references/cat-orange/idle/cat_orange_idle_1.png",
+      "source_sha256": "a32f9cec8146216810ac3d6c5ace271ef87e4333bb36019c3aa544901da2503f",
+      "source_alpha_box": [
+        89,
+        69,
+        195,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "review",
+      "row": 8,
+      "column": 5,
+      "source_state": "idle",
+      "source_index": 1,
+      "source_path": "references/cat-orange/idle/cat_orange_idle_1.png",
+      "source_sha256": "a32f9cec8146216810ac3d6c5ace271ef87e4333bb36019c3aa544901da2503f",
+      "source_alpha_box": [
+        89,
+        69,
+        195,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "look-000-to-157.5",
+      "row": 9,
+      "column": 0,
+      "source_state": "sleep",
+      "source_index": 0,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_0.png",
+      "source_sha256": "51c6fe875f20bcc6ff3882a2e29f69e627f747a332d84873933c7365001a09d2",
+      "source_alpha_box": [
+        57,
+        73,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "look-000-to-157.5",
+      "row": 9,
+      "column": 1,
+      "source_state": "sleep",
+      "source_index": 0,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_0.png",
+      "source_sha256": "51c6fe875f20bcc6ff3882a2e29f69e627f747a332d84873933c7365001a09d2",
+      "source_alpha_box": [
+        57,
+        73,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "look-000-to-157.5",
+      "row": 9,
+      "column": 2,
+      "source_state": "sleep",
+      "source_index": 0,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_0.png",
+      "source_sha256": "51c6fe875f20bcc6ff3882a2e29f69e627f747a332d84873933c7365001a09d2",
+      "source_alpha_box": [
+        57,
+        73,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "look-000-to-157.5",
+      "row": 9,
+      "column": 3,
+      "source_state": "sleep",
+      "source_index": 0,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_0.png",
+      "source_sha256": "51c6fe875f20bcc6ff3882a2e29f69e627f747a332d84873933c7365001a09d2",
+      "source_alpha_box": [
+        57,
+        73,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "look-000-to-157.5",
+      "row": 9,
+      "column": 4,
+      "source_state": "sleep",
+      "source_index": 0,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_0.png",
+      "source_sha256": "51c6fe875f20bcc6ff3882a2e29f69e627f747a332d84873933c7365001a09d2",
+      "source_alpha_box": [
+        57,
+        73,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "look-000-to-157.5",
+      "row": 9,
+      "column": 5,
+      "source_state": "sleep",
+      "source_index": 0,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_0.png",
+      "source_sha256": "51c6fe875f20bcc6ff3882a2e29f69e627f747a332d84873933c7365001a09d2",
+      "source_alpha_box": [
+        57,
+        73,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "look-000-to-157.5",
+      "row": 9,
+      "column": 6,
+      "source_state": "sleep",
+      "source_index": 0,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_0.png",
+      "source_sha256": "51c6fe875f20bcc6ff3882a2e29f69e627f747a332d84873933c7365001a09d2",
+      "source_alpha_box": [
+        57,
+        73,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "look-000-to-157.5",
+      "row": 9,
+      "column": 7,
+      "source_state": "sleep",
+      "source_index": 0,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_0.png",
+      "source_sha256": "51c6fe875f20bcc6ff3882a2e29f69e627f747a332d84873933c7365001a09d2",
+      "source_alpha_box": [
+        57,
+        73,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "look-180-to-337.5",
+      "row": 10,
+      "column": 0,
+      "source_state": "sleep",
+      "source_index": 0,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_0.png",
+      "source_sha256": "51c6fe875f20bcc6ff3882a2e29f69e627f747a332d84873933c7365001a09d2",
+      "source_alpha_box": [
+        57,
+        73,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "look-180-to-337.5",
+      "row": 10,
+      "column": 1,
+      "source_state": "sleep",
+      "source_index": 0,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_0.png",
+      "source_sha256": "51c6fe875f20bcc6ff3882a2e29f69e627f747a332d84873933c7365001a09d2",
+      "source_alpha_box": [
+        57,
+        73,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "look-180-to-337.5",
+      "row": 10,
+      "column": 2,
+      "source_state": "sleep",
+      "source_index": 0,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_0.png",
+      "source_sha256": "51c6fe875f20bcc6ff3882a2e29f69e627f747a332d84873933c7365001a09d2",
+      "source_alpha_box": [
+        57,
+        73,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "look-180-to-337.5",
+      "row": 10,
+      "column": 3,
+      "source_state": "sleep",
+      "source_index": 0,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_0.png",
+      "source_sha256": "51c6fe875f20bcc6ff3882a2e29f69e627f747a332d84873933c7365001a09d2",
+      "source_alpha_box": [
+        57,
+        73,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "look-180-to-337.5",
+      "row": 10,
+      "column": 4,
+      "source_state": "sleep",
+      "source_index": 0,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_0.png",
+      "source_sha256": "51c6fe875f20bcc6ff3882a2e29f69e627f747a332d84873933c7365001a09d2",
+      "source_alpha_box": [
+        57,
+        73,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "look-180-to-337.5",
+      "row": 10,
+      "column": 5,
+      "source_state": "sleep",
+      "source_index": 0,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_0.png",
+      "source_sha256": "51c6fe875f20bcc6ff3882a2e29f69e627f747a332d84873933c7365001a09d2",
+      "source_alpha_box": [
+        57,
+        73,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "look-180-to-337.5",
+      "row": 10,
+      "column": 6,
+      "source_state": "sleep",
+      "source_index": 0,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_0.png",
+      "source_sha256": "51c6fe875f20bcc6ff3882a2e29f69e627f747a332d84873933c7365001a09d2",
+      "source_alpha_box": [
+        57,
+        73,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "look-180-to-337.5",
+      "row": 10,
+      "column": 7,
+      "source_state": "sleep",
+      "source_index": 0,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_0.png",
+      "source_sha256": "51c6fe875f20bcc6ff3882a2e29f69e627f747a332d84873933c7365001a09d2",
+      "source_alpha_box": [
+        57,
+        73,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "idle-neutral",
+      "row": 0,
+      "column": 6,
+      "source_state": "sleep",
+      "source_index": 0,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_0.png",
+      "source_sha256": "51c6fe875f20bcc6ff3882a2e29f69e627f747a332d84873933c7365001a09d2",
+      "source_alpha_box": [
+        57,
+        73,
+        187,
+        175
+      ],
+      "mirrored": false
+    }
+  ]
+}

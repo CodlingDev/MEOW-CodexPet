@@ -1,0 +1,7 @@
+{
+  "id": "meow",
+  "displayName": "MEOW",
+  "description": "The original orange tabby from the macOS MEOW app, using its original animations.",
+  "spriteVersionNumber": 2,
+  "spritesheetPath": "spritesheet.webp"
+}
