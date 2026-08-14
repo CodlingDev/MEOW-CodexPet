@@ -2,7 +2,7 @@
   "ok": true,
   "spriteVersionNumber": 2,
   "spritesheet": "pets/meow/spritesheet.webp",
-  "spritesheet_sha256": "e2b57e7129bf323fd04dc327f1ed22891ff5151487332c8557740c7c5a083bce",
+  "spritesheet_sha256": "890e4a5c19156c8a0235dc23bc88d2976d9e8839f8195af1ae54fcb2c9b1e3d7",
   "asset_mapping": "qa/meow/asset-mapping.json",
   "review": "qa/meow/review.json",
   "validation": "qa/meow/validation-extended.json",

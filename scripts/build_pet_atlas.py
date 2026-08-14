@@ -36,12 +36,12 @@ STANDARD_ROWS = (
     RowMapping("idle", "sleep", (0, 1, 1, 1, 2, 2)),
     RowMapping("running-right", "roll", (0, 0, 4, 8, 12, 16, 16, 0), mirror=True),
     RowMapping("running-left", "roll", (0, 0, 4, 8, 12, 16, 16, 0)),
-    RowMapping("waving", "stretch", (10, 10, 10, 10)),
-    RowMapping("jumping", "stretch", (10, 10, 10, 10, 10)),
+    RowMapping("waving", "stretch", (6, 7, 7, 6)),
+    RowMapping("jumping", "stretch", (6, 7, 7, 7, 6)),
     RowMapping("failed", "play", (0, 2, 3, 5, 6, 8, 9, 11)),
     RowMapping("waiting", "play", (0, 2, 4, 6, 8, 10)),
-    RowMapping("running", "idle", (0, 1, 0, 1, 0, 1)),
-    RowMapping("review", "idle", (0, 1, 0, 1, 0, 1)),
+    RowMapping("running", "idle", (0, 0, 0, 1, 1, 1)),
+    RowMapping("review", "idle", (0, 0, 0, 1, 1, 1)),
 )
 
 LOOK_ROWS = (
@@ -74,8 +74,14 @@ RUNTIME_APPROXIMATION = {
         "requested_slowdown": 3.0,
         "requested_visible_repetitions": 1,
         "runtime_repetitions": 3,
-        "technique": "Hold stretch frame 10 so repeated runtime cycles are visually identical.",
-        "source_indices": [10],
+        "technique": "Animate only the fully stretched source range with repeated holds.",
+        "waving_source_indices": [6, 7, 7, 6],
+        "jumping_source_indices": [6, 7, 7, 7, 6],
+    },
+    "seated_idle": {
+        "affected_states": ["running", "review"],
+        "technique": "Hold each seated source pose for three consecutive runtime slots.",
+        "source_indices": [0, 0, 0, 1, 1, 1],
     },
 }
 

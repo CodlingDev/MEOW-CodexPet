@@ -62,9 +62,34 @@
       "requested_slowdown": 3.0,
       "requested_visible_repetitions": 1,
       "runtime_repetitions": 3,
-      "technique": "Hold stretch frame 10 so repeated runtime cycles are visually identical.",
+      "technique": "Animate only the fully stretched source range with repeated holds.",
+      "waving_source_indices": [
+        6,
+        7,
+        7,
+        6
+      ],
+      "jumping_source_indices": [
+        6,
+        7,
+        7,
+        7,
+        6
+      ]
+    },
+    "seated_idle": {
+      "affected_states": [
+        "running",
+        "review"
+      ],
+      "technique": "Hold each seated source pose for three consecutive runtime slots.",
       "source_indices": [
-        10
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
       ]
     }
   },
@@ -116,10 +141,10 @@
       "state": "waving",
       "source_state": "stretch",
       "source_indices": [
-        10,
-        10,
-        10,
-        10
+        6,
+        7,
+        7,
+        6
       ],
       "mirrored": false
     },
@@ -127,11 +152,11 @@
       "state": "jumping",
       "source_state": "stretch",
       "source_indices": [
-        10,
-        10,
-        10,
-        10,
-        10
+        6,
+        7,
+        7,
+        7,
+        6
       ],
       "mirrored": false
     },
@@ -168,10 +193,10 @@
       "source_state": "idle",
       "source_indices": [
         0,
-        1,
+        0,
         0,
         1,
-        0,
+        1,
         1
       ],
       "mirrored": false
@@ -181,10 +206,10 @@
       "source_state": "idle",
       "source_indices": [
         0,
-        1,
+        0,
         0,
         1,
-        0,
+        1,
         1
       ],
       "mirrored": false
@@ -578,12 +603,12 @@
       "row": 3,
       "column": 0,
       "source_state": "stretch",
-      "source_index": 10,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_10.png",
-      "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
+      "source_index": 6,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_6.png",
+      "source_sha256": "071a2b23d3662c0b72458882049571ca30fc19d6ebd779cb17485430e72ffadb",
       "source_alpha_box": [
         64,
-        88,
+        84,
         220,
         168
       ],
@@ -594,8 +619,8 @@
       "row": 3,
       "column": 1,
       "source_state": "stretch",
-      "source_index": 10,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_10.png",
+      "source_index": 7,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_7.png",
       "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
       "source_alpha_box": [
         64,
@@ -610,8 +635,8 @@
       "row": 3,
       "column": 2,
       "source_state": "stretch",
-      "source_index": 10,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_10.png",
+      "source_index": 7,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_7.png",
       "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
       "source_alpha_box": [
         64,
@@ -626,12 +651,12 @@
       "row": 3,
       "column": 3,
       "source_state": "stretch",
-      "source_index": 10,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_10.png",
-      "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
+      "source_index": 6,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_6.png",
+      "source_sha256": "071a2b23d3662c0b72458882049571ca30fc19d6ebd779cb17485430e72ffadb",
       "source_alpha_box": [
         64,
-        88,
+        84,
         220,
         168
       ],
@@ -642,12 +667,12 @@
       "row": 4,
       "column": 0,
       "source_state": "stretch",
-      "source_index": 10,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_10.png",
-      "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
+      "source_index": 6,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_6.png",
+      "source_sha256": "071a2b23d3662c0b72458882049571ca30fc19d6ebd779cb17485430e72ffadb",
       "source_alpha_box": [
         64,
-        88,
+        84,
         220,
         168
       ],
@@ -658,8 +683,8 @@
       "row": 4,
       "column": 1,
       "source_state": "stretch",
-      "source_index": 10,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_10.png",
+      "source_index": 7,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_7.png",
       "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
       "source_alpha_box": [
         64,
@@ -674,8 +699,8 @@
       "row": 4,
       "column": 2,
       "source_state": "stretch",
-      "source_index": 10,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_10.png",
+      "source_index": 7,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_7.png",
       "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
       "source_alpha_box": [
         64,
@@ -690,8 +715,8 @@
       "row": 4,
       "column": 3,
       "source_state": "stretch",
-      "source_index": 10,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_10.png",
+      "source_index": 7,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_7.png",
       "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
       "source_alpha_box": [
         64,
@@ -706,12 +731,12 @@
       "row": 4,
       "column": 4,
       "source_state": "stretch",
-      "source_index": 10,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_10.png",
-      "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
+      "source_index": 6,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_6.png",
+      "source_sha256": "071a2b23d3662c0b72458882049571ca30fc19d6ebd779cb17485430e72ffadb",
       "source_alpha_box": [
         64,
-        88,
+        84,
         220,
         168
       ],
@@ -962,14 +987,14 @@
       "row": 7,
       "column": 1,
       "source_state": "idle",
-      "source_index": 1,
-      "source_path": "references/cat-orange/idle/cat_orange_idle_1.png",
-      "source_sha256": "a32f9cec8146216810ac3d6c5ace271ef87e4333bb36019c3aa544901da2503f",
+      "source_index": 0,
+      "source_path": "references/cat-orange/idle/cat_orange_idle_0.png",
+      "source_sha256": "403dc3df5741bf2fe9ca67a7eed5bc399be52d7f39a0130c22f85cef3502d828",
       "source_alpha_box": [
         89,
-        69,
-        195,
-        175
+        65,
+        191,
+        171
       ],
       "mirrored": false
     },
@@ -1010,14 +1035,14 @@
       "row": 7,
       "column": 4,
       "source_state": "idle",
-      "source_index": 0,
-      "source_path": "references/cat-orange/idle/cat_orange_idle_0.png",
-      "source_sha256": "403dc3df5741bf2fe9ca67a7eed5bc399be52d7f39a0130c22f85cef3502d828",
+      "source_index": 1,
+      "source_path": "references/cat-orange/idle/cat_orange_idle_1.png",
+      "source_sha256": "a32f9cec8146216810ac3d6c5ace271ef87e4333bb36019c3aa544901da2503f",
       "source_alpha_box": [
         89,
-        65,
-        191,
-        171
+        69,
+        195,
+        175
       ],
       "mirrored": false
     },
@@ -1058,14 +1083,14 @@
       "row": 8,
       "column": 1,
       "source_state": "idle",
-      "source_index": 1,
-      "source_path": "references/cat-orange/idle/cat_orange_idle_1.png",
-      "source_sha256": "a32f9cec8146216810ac3d6c5ace271ef87e4333bb36019c3aa544901da2503f",
+      "source_index": 0,
+      "source_path": "references/cat-orange/idle/cat_orange_idle_0.png",
+      "source_sha256": "403dc3df5741bf2fe9ca67a7eed5bc399be52d7f39a0130c22f85cef3502d828",
       "source_alpha_box": [
         89,
-        69,
-        195,
-        175
+        65,
+        191,
+        171
       ],
       "mirrored": false
     },
@@ -1106,14 +1131,14 @@
       "row": 8,
       "column": 4,
       "source_state": "idle",
-      "source_index": 0,
-      "source_path": "references/cat-orange/idle/cat_orange_idle_0.png",
-      "source_sha256": "403dc3df5741bf2fe9ca67a7eed5bc399be52d7f39a0130c22f85cef3502d828",
+      "source_index": 1,
+      "source_path": "references/cat-orange/idle/cat_orange_idle_1.png",
+      "source_sha256": "a32f9cec8146216810ac3d6c5ace271ef87e4333bb36019c3aa544901da2503f",
       "source_alpha_box": [
         89,
-        65,
-        191,
-        171
+        69,
+        195,
+        175
       ],
       "mirrored": false
     },
