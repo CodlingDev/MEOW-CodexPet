@@ -29,6 +29,45 @@
   "generated": false,
   "direction_response": false,
   "direction_cells": "All 16 cells use the unchanged sleep frame 0.",
+  "runtime_approximation": {
+    "runtime_modified": false,
+    "idle": {
+      "requested_slowdown": 2.0,
+      "technique": "Hold three source poses across six runtime slots.",
+      "source_indices": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    "roll": {
+      "requested_slowdown": 1.5,
+      "estimated_pose_change_slowdown": 1.6,
+      "technique": "Reduce one cycle from eight visible pose changes to five.",
+      "source_indices": [
+        0,
+        0,
+        4,
+        8,
+        12,
+        16,
+        16,
+        0
+      ]
+    },
+    "stretch": {
+      "requested_slowdown": 3.0,
+      "requested_visible_repetitions": 1,
+      "runtime_repetitions": 3,
+      "technique": "Hold stretch frame 10 so repeated runtime cycles are visually identical.",
+      "source_indices": [
+        10
+      ]
+    }
+  },
   "rows": [
     {
       "state": "idle",
@@ -36,10 +75,10 @@
       "source_indices": [
         0,
         1,
+        1,
+        1,
         2,
-        3,
-        2,
-        1
+        2
       ],
       "mirrored": false
     },
@@ -48,13 +87,13 @@
       "source_state": "roll",
       "source_indices": [
         0,
-        2,
-        5,
-        7,
-        9,
-        11,
-        14,
-        16
+        0,
+        4,
+        8,
+        12,
+        16,
+        16,
+        0
       ],
       "mirrored": true
     },
@@ -63,13 +102,13 @@
       "source_state": "roll",
       "source_indices": [
         0,
-        2,
-        5,
-        7,
-        9,
-        11,
-        14,
-        16
+        0,
+        4,
+        8,
+        12,
+        16,
+        16,
+        0
       ],
       "mirrored": false
     },
@@ -77,10 +116,10 @@
       "state": "waving",
       "source_state": "stretch",
       "source_indices": [
-        0,
-        5,
         10,
-        16
+        10,
+        10,
+        10
       ],
       "mirrored": false
     },
@@ -88,11 +127,11 @@
       "state": "jumping",
       "source_state": "stretch",
       "source_indices": [
-        0,
-        4,
-        8,
-        12,
-        16
+        10,
+        10,
+        10,
+        10,
+        10
       ],
       "mirrored": false
     },
@@ -219,25 +258,9 @@
       "row": 0,
       "column": 2,
       "source_state": "sleep",
-      "source_index": 2,
-      "source_path": "references/cat-orange/sleep/cat_orange_sleep_2.png",
-      "source_sha256": "906a15df08f986c32ecc4885b5fb6183cbebc25d35e7c168768b312b67a1afa6",
-      "source_alpha_box": [
-        61,
-        93,
-        187,
-        175
-      ],
-      "mirrored": false
-    },
-    {
-      "state": "idle",
-      "row": 0,
-      "column": 3,
-      "source_state": "sleep",
-      "source_index": 3,
-      "source_path": "references/cat-orange/sleep/cat_orange_sleep_3.png",
-      "source_sha256": "8d5f26ae4d7d02fd7b5d41eb96f99bd9dd0057ffc47b8c6d296fecd39f28e79b",
+      "source_index": 1,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_1.png",
+      "source_sha256": "48b970f78f129a7edd1a39cf69b1f93c4b64a4ff2aaae88a4050c4579ede5311",
       "source_alpha_box": [
         61,
         85,
@@ -249,23 +272,7 @@
     {
       "state": "idle",
       "row": 0,
-      "column": 4,
-      "source_state": "sleep",
-      "source_index": 2,
-      "source_path": "references/cat-orange/sleep/cat_orange_sleep_2.png",
-      "source_sha256": "906a15df08f986c32ecc4885b5fb6183cbebc25d35e7c168768b312b67a1afa6",
-      "source_alpha_box": [
-        61,
-        93,
-        187,
-        175
-      ],
-      "mirrored": false
-    },
-    {
-      "state": "idle",
-      "row": 0,
-      "column": 5,
+      "column": 3,
       "source_state": "sleep",
       "source_index": 1,
       "source_path": "references/cat-orange/sleep/cat_orange_sleep_1.png",
@@ -279,6 +286,38 @@
       "mirrored": false
     },
     {
+      "state": "idle",
+      "row": 0,
+      "column": 4,
+      "source_state": "sleep",
+      "source_index": 2,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_2.png",
+      "source_sha256": "906a15df08f986c32ecc4885b5fb6183cbebc25d35e7c168768b312b67a1afa6",
+      "source_alpha_box": [
+        61,
+        93,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "idle",
+      "row": 0,
+      "column": 5,
+      "source_state": "sleep",
+      "source_index": 2,
+      "source_path": "references/cat-orange/sleep/cat_orange_sleep_2.png",
+      "source_sha256": "906a15df08f986c32ecc4885b5fb6183cbebc25d35e7c168768b312b67a1afa6",
+      "source_alpha_box": [
+        61,
+        93,
+        187,
+        175
+      ],
+      "mirrored": false
+    },
+    {
       "state": "running-right",
       "row": 1,
       "column": 0,
@@ -299,14 +338,14 @@
       "row": 1,
       "column": 1,
       "source_state": "roll",
-      "source_index": 2,
-      "source_path": "references/cat-orange/roll/cat_orange_roll_02.png",
-      "source_sha256": "14b729c4dcb89c2b397a90b4e8d97817018f90ea798e0c771c4f1048e1595a65",
+      "source_index": 0,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_00.png",
+      "source_sha256": "3f3276f3391a525084f78cd6b7ced3ba41537999ba5a96af9177a6c57588a7f3",
       "source_alpha_box": [
         52,
-        92,
-        236,
-        168
+        104,
+        228,
+        172
       ],
       "mirrored": true
     },
@@ -315,25 +354,9 @@
       "row": 1,
       "column": 2,
       "source_state": "roll",
-      "source_index": 5,
-      "source_path": "references/cat-orange/roll/cat_orange_roll_05.png",
-      "source_sha256": "8ff8a810b4e6377a9eec3ef9ff88c92eb549aad9b2eded6b87844c4c7905749d",
-      "source_alpha_box": [
-        52,
-        88,
-        236,
-        168
-      ],
-      "mirrored": true
-    },
-    {
-      "state": "running-right",
-      "row": 1,
-      "column": 3,
-      "source_state": "roll",
-      "source_index": 7,
-      "source_path": "references/cat-orange/roll/cat_orange_roll_07.png",
-      "source_sha256": "75b4ac39785f9ae76f0293461244352a79e5c685e6f2a15bacd272d256182aa0",
+      "source_index": 4,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_04.png",
+      "source_sha256": "3b8212f812698502ea64972578457b92234b11a0978dc747c25e045af1205a6d",
       "source_alpha_box": [
         52,
         84,
@@ -345,10 +368,10 @@
     {
       "state": "running-right",
       "row": 1,
-      "column": 4,
+      "column": 3,
       "source_state": "roll",
-      "source_index": 9,
-      "source_path": "references/cat-orange/roll/cat_orange_roll_09.png",
+      "source_index": 8,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_08.png",
       "source_sha256": "378de8ed736b74fabda2c42c55d3661baa57dcfb994dd5293043d489eea35551",
       "source_alpha_box": [
         52,
@@ -361,11 +384,11 @@
     {
       "state": "running-right",
       "row": 1,
-      "column": 5,
+      "column": 4,
       "source_state": "roll",
-      "source_index": 11,
-      "source_path": "references/cat-orange/roll/cat_orange_roll_11.png",
-      "source_sha256": "732b89562efafd93eeb1e193b45ccd542e58f5822c646948f10108ff4e23e9a8",
+      "source_index": 12,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_12.png",
+      "source_sha256": "1e27e477afed376f45a80ae8900c0b63fe5b6350ec044e358b5aecbd58401f21",
       "source_alpha_box": [
         52,
         88,
@@ -377,23 +400,7 @@
     {
       "state": "running-right",
       "row": 1,
-      "column": 6,
-      "source_state": "roll",
-      "source_index": 14,
-      "source_path": "references/cat-orange/roll/cat_orange_roll_14.png",
-      "source_sha256": "68303a4b743eb93c319351e15ced92750c0cbd88a31b2b01b67cf379198618db",
-      "source_alpha_box": [
-        52,
-        96,
-        236,
-        168
-      ],
-      "mirrored": true
-    },
-    {
-      "state": "running-right",
-      "row": 1,
-      "column": 7,
+      "column": 5,
       "source_state": "roll",
       "source_index": 16,
       "source_path": "references/cat-orange/roll/cat_orange_roll_16.png",
@@ -403,6 +410,38 @@
         96,
         228,
         168
+      ],
+      "mirrored": true
+    },
+    {
+      "state": "running-right",
+      "row": 1,
+      "column": 6,
+      "source_state": "roll",
+      "source_index": 16,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_16.png",
+      "source_sha256": "bd6df7690ea5b1f8087e2fb303e27f82892507412b993cccf258d56fb01f683c",
+      "source_alpha_box": [
+        52,
+        96,
+        228,
+        168
+      ],
+      "mirrored": true
+    },
+    {
+      "state": "running-right",
+      "row": 1,
+      "column": 7,
+      "source_state": "roll",
+      "source_index": 0,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_00.png",
+      "source_sha256": "3f3276f3391a525084f78cd6b7ced3ba41537999ba5a96af9177a6c57588a7f3",
+      "source_alpha_box": [
+        52,
+        104,
+        228,
+        172
       ],
       "mirrored": true
     },
@@ -427,14 +466,14 @@
       "row": 2,
       "column": 1,
       "source_state": "roll",
-      "source_index": 2,
-      "source_path": "references/cat-orange/roll/cat_orange_roll_02.png",
-      "source_sha256": "14b729c4dcb89c2b397a90b4e8d97817018f90ea798e0c771c4f1048e1595a65",
+      "source_index": 0,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_00.png",
+      "source_sha256": "3f3276f3391a525084f78cd6b7ced3ba41537999ba5a96af9177a6c57588a7f3",
       "source_alpha_box": [
         52,
-        92,
-        236,
-        168
+        104,
+        228,
+        172
       ],
       "mirrored": false
     },
@@ -443,25 +482,9 @@
       "row": 2,
       "column": 2,
       "source_state": "roll",
-      "source_index": 5,
-      "source_path": "references/cat-orange/roll/cat_orange_roll_05.png",
-      "source_sha256": "8ff8a810b4e6377a9eec3ef9ff88c92eb549aad9b2eded6b87844c4c7905749d",
-      "source_alpha_box": [
-        52,
-        88,
-        236,
-        168
-      ],
-      "mirrored": false
-    },
-    {
-      "state": "running-left",
-      "row": 2,
-      "column": 3,
-      "source_state": "roll",
-      "source_index": 7,
-      "source_path": "references/cat-orange/roll/cat_orange_roll_07.png",
-      "source_sha256": "75b4ac39785f9ae76f0293461244352a79e5c685e6f2a15bacd272d256182aa0",
+      "source_index": 4,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_04.png",
+      "source_sha256": "3b8212f812698502ea64972578457b92234b11a0978dc747c25e045af1205a6d",
       "source_alpha_box": [
         52,
         84,
@@ -473,10 +496,10 @@
     {
       "state": "running-left",
       "row": 2,
-      "column": 4,
+      "column": 3,
       "source_state": "roll",
-      "source_index": 9,
-      "source_path": "references/cat-orange/roll/cat_orange_roll_09.png",
+      "source_index": 8,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_08.png",
       "source_sha256": "378de8ed736b74fabda2c42c55d3661baa57dcfb994dd5293043d489eea35551",
       "source_alpha_box": [
         52,
@@ -489,11 +512,11 @@
     {
       "state": "running-left",
       "row": 2,
-      "column": 5,
+      "column": 4,
       "source_state": "roll",
-      "source_index": 11,
-      "source_path": "references/cat-orange/roll/cat_orange_roll_11.png",
-      "source_sha256": "732b89562efafd93eeb1e193b45ccd542e58f5822c646948f10108ff4e23e9a8",
+      "source_index": 12,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_12.png",
+      "source_sha256": "1e27e477afed376f45a80ae8900c0b63fe5b6350ec044e358b5aecbd58401f21",
       "source_alpha_box": [
         52,
         88,
@@ -505,23 +528,7 @@
     {
       "state": "running-left",
       "row": 2,
-      "column": 6,
-      "source_state": "roll",
-      "source_index": 14,
-      "source_path": "references/cat-orange/roll/cat_orange_roll_14.png",
-      "source_sha256": "68303a4b743eb93c319351e15ced92750c0cbd88a31b2b01b67cf379198618db",
-      "source_alpha_box": [
-        52,
-        96,
-        236,
-        168
-      ],
-      "mirrored": false
-    },
-    {
-      "state": "running-left",
-      "row": 2,
-      "column": 7,
+      "column": 5,
       "source_state": "roll",
       "source_index": 16,
       "source_path": "references/cat-orange/roll/cat_orange_roll_16.png",
@@ -535,17 +542,49 @@
       "mirrored": false
     },
     {
+      "state": "running-left",
+      "row": 2,
+      "column": 6,
+      "source_state": "roll",
+      "source_index": 16,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_16.png",
+      "source_sha256": "bd6df7690ea5b1f8087e2fb303e27f82892507412b993cccf258d56fb01f683c",
+      "source_alpha_box": [
+        52,
+        96,
+        228,
+        168
+      ],
+      "mirrored": false
+    },
+    {
+      "state": "running-left",
+      "row": 2,
+      "column": 7,
+      "source_state": "roll",
+      "source_index": 0,
+      "source_path": "references/cat-orange/roll/cat_orange_roll_00.png",
+      "source_sha256": "3f3276f3391a525084f78cd6b7ced3ba41537999ba5a96af9177a6c57588a7f3",
+      "source_alpha_box": [
+        52,
+        104,
+        228,
+        172
+      ],
+      "mirrored": false
+    },
+    {
       "state": "waving",
       "row": 3,
       "column": 0,
       "source_state": "stretch",
-      "source_index": 0,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_0.png",
-      "source_sha256": "de1230612bb6ade6fd60b68967612357bad61f4078490c55c8fd0dba3530b2e1",
+      "source_index": 10,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_10.png",
+      "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
       "source_alpha_box": [
         64,
-        68,
-        208,
+        88,
+        220,
         168
       ],
       "mirrored": false
@@ -555,13 +594,13 @@
       "row": 3,
       "column": 1,
       "source_state": "stretch",
-      "source_index": 5,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_5.png",
-      "source_sha256": "0dc0548f3855e4bad10f58228f38ec855f3742e34ca04632748b1e2dcd4ca65f",
+      "source_index": 10,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_10.png",
+      "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
       "source_alpha_box": [
         64,
-        80,
-        216,
+        88,
+        220,
         168
       ],
       "mirrored": false
@@ -587,13 +626,13 @@
       "row": 3,
       "column": 3,
       "source_state": "stretch",
-      "source_index": 16,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_16.png",
-      "source_sha256": "de1230612bb6ade6fd60b68967612357bad61f4078490c55c8fd0dba3530b2e1",
+      "source_index": 10,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_10.png",
+      "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
       "source_alpha_box": [
         64,
-        68,
-        208,
+        88,
+        220,
         168
       ],
       "mirrored": false
@@ -603,13 +642,13 @@
       "row": 4,
       "column": 0,
       "source_state": "stretch",
-      "source_index": 0,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_0.png",
-      "source_sha256": "de1230612bb6ade6fd60b68967612357bad61f4078490c55c8fd0dba3530b2e1",
+      "source_index": 10,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_10.png",
+      "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
       "source_alpha_box": [
         64,
-        68,
-        208,
+        88,
+        220,
         168
       ],
       "mirrored": false
@@ -619,13 +658,13 @@
       "row": 4,
       "column": 1,
       "source_state": "stretch",
-      "source_index": 4,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_4.png",
-      "source_sha256": "36795810a3e376786a4fc125587bd6a25431bb9f9a727693b1cf58753bde018b",
+      "source_index": 10,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_10.png",
+      "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
       "source_alpha_box": [
-        68,
-        80,
-        212,
+        64,
+        88,
+        220,
         168
       ],
       "mirrored": false
@@ -635,8 +674,8 @@
       "row": 4,
       "column": 2,
       "source_state": "stretch",
-      "source_index": 8,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_8.png",
+      "source_index": 10,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_10.png",
       "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
       "source_alpha_box": [
         64,
@@ -651,8 +690,8 @@
       "row": 4,
       "column": 3,
       "source_state": "stretch",
-      "source_index": 12,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_12.png",
+      "source_index": 10,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_10.png",
       "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
       "source_alpha_box": [
         64,
@@ -667,13 +706,13 @@
       "row": 4,
       "column": 4,
       "source_state": "stretch",
-      "source_index": 16,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_16.png",
-      "source_sha256": "de1230612bb6ade6fd60b68967612357bad61f4078490c55c8fd0dba3530b2e1",
+      "source_index": 10,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_10.png",
+      "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
       "source_alpha_box": [
         64,
-        68,
-        208,
+        88,
+        220,
         168
       ],
       "mirrored": false

@@ -31,11 +31,13 @@ class RowMapping:
 
 
 STANDARD_ROWS = (
-    RowMapping("idle", "sleep", (0, 1, 2, 3, 2, 1)),
-    RowMapping("running-right", "roll", (0, 2, 5, 7, 9, 11, 14, 16), mirror=True),
-    RowMapping("running-left", "roll", (0, 2, 5, 7, 9, 11, 14, 16)),
-    RowMapping("waving", "stretch", (0, 5, 10, 16)),
-    RowMapping("jumping", "stretch", (0, 4, 8, 12, 16)),
+    # Codex Pet v2 fixes frame durations in the app runtime. Repeated source
+    # poses reduce visible pose changes while keeping this package portable.
+    RowMapping("idle", "sleep", (0, 1, 1, 1, 2, 2)),
+    RowMapping("running-right", "roll", (0, 0, 4, 8, 12, 16, 16, 0), mirror=True),
+    RowMapping("running-left", "roll", (0, 0, 4, 8, 12, 16, 16, 0)),
+    RowMapping("waving", "stretch", (10, 10, 10, 10)),
+    RowMapping("jumping", "stretch", (10, 10, 10, 10, 10)),
     RowMapping("failed", "play", (0, 2, 3, 5, 6, 8, 9, 11)),
     RowMapping("waiting", "play", (0, 2, 4, 6, 8, 10)),
     RowMapping("running", "idle", (0, 1, 0, 1, 0, 1)),
@@ -53,6 +55,28 @@ EXPECTED_SOURCE_COUNTS = {
     "stretch": 17,
     "play": 12,
     "sleep": 4,
+}
+
+RUNTIME_APPROXIMATION = {
+    "runtime_modified": False,
+    "idle": {
+        "requested_slowdown": 2.0,
+        "technique": "Hold three source poses across six runtime slots.",
+        "source_indices": [0, 1, 1, 1, 2, 2],
+    },
+    "roll": {
+        "requested_slowdown": 1.5,
+        "estimated_pose_change_slowdown": 1.6,
+        "technique": "Reduce one cycle from eight visible pose changes to five.",
+        "source_indices": [0, 0, 4, 8, 12, 16, 16, 0],
+    },
+    "stretch": {
+        "requested_slowdown": 3.0,
+        "requested_visible_repetitions": 1,
+        "runtime_repetitions": 3,
+        "technique": "Hold stretch frame 10 so repeated runtime cycles are visually identical.",
+        "source_indices": [10],
+    },
 }
 
 
@@ -280,6 +304,7 @@ def main() -> None:
         "generated": False,
         "direction_response": False,
         "direction_cells": "All 16 cells use the unchanged sleep frame 0.",
+        "runtime_approximation": RUNTIME_APPROXIMATION,
         "rows": [
             {
                 "state": mapping.state,
@@ -310,6 +335,8 @@ def main() -> None:
             "only_running_right_mirrored": True,
             "unused_cells_transparent": True,
             "direction_response_disabled": True,
+            "runtime_unchanged": True,
+            "timing_approximated_with_source_frame_holds": True,
         },
     }
     (qa_dir / "review.json").write_text(

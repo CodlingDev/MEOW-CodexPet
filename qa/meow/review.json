@@ -11,6 +11,8 @@
     "webp_lossless_roundtrip": "pass",
     "only_running_right_mirrored": true,
     "unused_cells_transparent": true,
-    "direction_response_disabled": true
+    "direction_response_disabled": true,
+    "runtime_unchanged": true,
+    "timing_approximated_with_source_frame_holds": true
   }
 }
