@@ -1,4 +1,6 @@
 .DS_Store
 .hatch/
+__pycache__/
+*.py[cod]
 *.tmp
 *.swp

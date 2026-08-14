@@ -1,16 +1,13 @@
 {
   "ok": true,
   "spriteVersionNumber": 2,
-  "run_dir": "/Users/don/MEOW-CodexPet/.hatch/meow-v2",
-  "spritesheet": "/Users/don/MEOW-CodexPet/.hatch/meow-v2/final/spritesheet-extended.webp",
-  "validation": "/Users/don/MEOW-CodexPet/.hatch/meow-v2/final/validation-extended.json",
-  "chroma_despill": "/Users/don/MEOW-CodexPet/.hatch/meow-v2/qa/chroma-despill-extended.json",
-  "contact_sheet": "/Users/don/MEOW-CodexPet/.hatch/meow-v2/qa/contact-sheet-extended.png",
-  "direction_sheet": "/Users/don/MEOW-CodexPet/.hatch/meow-v2/qa/look-directions.png",
-  "direction_semantics": "/Users/don/MEOW-CodexPet/.hatch/meow-v2/qa/direction-semantics.json",
-  "blind_direction_validation": "/Users/don/MEOW-CodexPet/.hatch/meow-v2/qa/direction-blind-validation.json",
-  "blind_review_resolution": "/Users/don/MEOW-CodexPet/.hatch/meow-v2/qa/blind-review-resolution.json",
-  "continuity": "/Users/don/MEOW-CodexPet/.hatch/meow-v2/qa/look-continuity.json",
-  "review": "/Users/don/MEOW-CodexPet/.hatch/meow-v2/qa/review.json",
-  "package": "/Users/don/.codex/pets/meow"
+  "spritesheet": "pets/meow/spritesheet.webp",
+  "spritesheet_sha256": "46ee76e772cd689589551a7dd7d668a8a3adab2a750f51cf2e0631390465e668",
+  "asset_mapping": "qa/meow/asset-mapping.json",
+  "review": "qa/meow/review.json",
+  "validation": "qa/meow/validation-extended.json",
+  "contact_sheet": "qa/meow/contact-sheet-extended.png",
+  "previews": "qa/meow/previews",
+  "final_visual_qa": "qa/meow/final-visual-qa.txt",
+  "direction_response": false
 }
