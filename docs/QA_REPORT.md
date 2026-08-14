@@ -15,12 +15,15 @@ MEOW 기본 주황 고양이의 원본 1x PNG만으로 조립한 Codex Pet v2 �
 | 새 그림 생성 | 없음 |
 | 리사이즈 | 없음 |
 | 기하 변환 | `running-right` 수평 반전만 적용 |
+| `idle` 체감 속도 | 3개 자세 장기 유지, 자세 변경 절반 수준 |
+| `roll` 체감 속도 | 주기당 자세 변경 8회 → 5회, 약 1.6배 감소 |
+| `stretch` 반복 노출 | `stretch_10` 유지로 반복 동작이 보이지 않음 |
 | 방향 반응 | 없음, 16개 셀 모두 `sleep_0` |
 | WebP 픽셀 왕복 | 통과 |
 | 투명 RGB 잔여 픽셀 | 0 |
 | 프레임 구조 검사 | 오류 0, 경고 0 |
 | 독립 최종 시각 QA | `pass`, findings 없음 |
-| WebP SHA-256 | `46ee76e772cd689589551a7dd7d668a8a3adab2a750f51cf2e0631390465e668` |
+| WebP SHA-256 | `e2b57e7129bf323fd04dc327f1ed22891ff5151487332c8557740c7c5a083bce` |
 
 ## 프레임 구성
 
@@ -30,7 +33,7 @@ MEOW 기본 주황 고양이의 원본 1x PNG만으로 조립한 Codex Pet v2 �
 - `play`: 사용자 상호작용이 필요한 `failed`, `waiting`
 - `idle`: `running`, `review`
 
-각 행의 선택 인덱스와 원본 체크섬은 [`asset-mapping.json`](../qa/meow/asset-mapping.json)에 기록했습니다.
+각 행의 선택 인덱스와 원본 체크섬은 [`asset-mapping.json`](../qa/meow/asset-mapping.json)에 기록했습니다. 재생속도 조정은 Codex 앱 런타임을 변조하지 않고 원본 프레임을 중복하는 방식이며, 실제 상태 지속시간은 바뀌지 않습니다.
 
 ## 검증 명령
 

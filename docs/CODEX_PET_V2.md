@@ -6,11 +6,11 @@
 
 | 행 | 상태 | 프레임 수 | 의미 |
 | --- | --- | --- | --- |
-| 0 | `idle` | 6 | MEOW `sleep` |
-| 1 | `running-right` | 8 | MEOW `roll` 수평 반전 |
-| 2 | `running-left` | 8 | MEOW `roll` 원본 방향 |
-| 3 | `waving` | 4 | MEOW `stretch` |
-| 4 | `jumping` | 5 | MEOW `stretch` |
+| 0 | `idle` | 6 | MEOW `sleep`, 3개 자세 장기 유지 |
+| 1 | `running-right` | 8 | MEOW `roll` 자세 중복 및 수평 반전 |
+| 2 | `running-left` | 8 | MEOW `roll` 자세 중복 |
+| 3 | `waving` | 4 | MEOW `stretch_10` 자세 유지 |
+| 4 | `jumping` | 5 | MEOW `stretch_10` 자세 유지 |
 | 5 | `failed` | 8 | 사용자 상호작용이 필요함을 MEOW `play`로 표현 |
 | 6 | `waiting` | 6 | 사용자 상호작용이 필요함을 MEOW `play`로 표현 |
 | 7 | `running` | 6 | MEOW `idle` |
@@ -19,6 +19,16 @@
 | 10 | look 2 | 8 | 방향 반응 없음, 모두 MEOW `sleep_0` |
 
 사용하지 않는 셀은 완전히 투명해야 합니다.
+
+## 재생속도 근사
+
+Codex Pet v2 런타임은 상태별 프레임 시간과 비-idle 상태의 반복 횟수를 매니페스트로 제공하지 않습니다. 배포 가능한 표준 패키지를 유지하면서 체감 문제를 줄이기 위해 다음 프레임 배치를 사용합니다.
+
+- `idle`: `(0, 1, 1, 1, 2, 2)`로 자세 변경을 기존의 절반 수준으로 줄입니다.
+- `running-left`, `running-right`: `(0, 0, 4, 8, 12, 16, 16, 0)`으로 한 주기의 자세 변경을 8회에서 5회로 줄여 약 1.6배 느리게 보이도록 합니다.
+- `waving`, `jumping`: 완전히 늘어난 `stretch_10`을 모든 슬롯에 배치합니다. 런타임의 3회 반복은 유지되지만 동일한 자세이므로 반복 동작이 보이지 않고, 유지 시간이 끝나면 `sleep`으로 전환됩니다.
+
+이 방식은 실제 런타임 시간을 변경하지 않으며 원본 픽셀과 표준 Codex Pet 배포 형식을 보존합니다.
 
 ## 원본 보존 규칙
 

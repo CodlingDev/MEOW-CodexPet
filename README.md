@@ -39,11 +39,11 @@ macOS용 [MEOW](https://github.com/CodlingDev/MEOW)의 기본 주황 고양이 �
 
 | Codex 상태 | MEOW 상태 | 처리 |
 | --- | --- | --- |
-| `idle` | `sleep` | 4개 프레임을 6칸 루프로 구성 |
-| `running-right` | `roll` | 원본의 머리가 왼쪽이므로 선택 프레임을 수평 반전 |
-| `running-left` | `roll` | 원본 방향 그대로 사용 |
-| `waving` | `stretch` | 전체 동작에서 4개 대표 프레임 선택 |
-| `jumping` | `stretch` | 전체 동작에서 5개 대표 프레임 선택 |
+| `idle` | `sleep` | 3개 자세를 장기 유지하도록 중복해 체감 속도를 낮춤 |
+| `running-right` | `roll` | 시작·종료 자세를 중복하고 수평 반전해 포즈 변경 빈도를 낮춤 |
+| `running-left` | `roll` | 시작·종료 자세를 중복해 포즈 변경 빈도를 낮춤 |
+| `waving` | `stretch` | 완전히 늘어난 원본 자세를 유지해 반복 동작을 숨김 |
+| `jumping` | `stretch` | 완전히 늘어난 원본 자세를 유지해 반복 동작을 숨김 |
 | `failed` | `play` | 사용자 상호작용이 필요한 상태를 8개 프레임으로 표현 |
 | `waiting` | `play` | 사용자 상호작용이 필요한 상태를 6개 프레임으로 표현 |
 | `running` | `idle` | 2개 원본 프레임을 반복 |
@@ -104,6 +104,8 @@ make qa
 ```
 
 검증은 lossless WebP 픽셀 왕복, `1536 × 2288` v2 구조, 투명 셀, 미리보기 GIF와 전체 contact sheet를 확인합니다.
+
+Codex 앱은 상태별 프레임 시간과 비-idle 상태의 3회 반복을 고정합니다. 이 펫은 배포 호환성을 유지하기 위해 런타임을 수정하지 않고 원본 프레임 중복으로 `idle`과 `roll`의 포즈 변경 빈도를 낮춥니다. `stretch`는 완전히 늘어난 자세를 유지한 뒤 `sleep`으로 전환되어 반복이 눈에 보이지 않게 구성합니다.
 
 ## 현재 상태
 
