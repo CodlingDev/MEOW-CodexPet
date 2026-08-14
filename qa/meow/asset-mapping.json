@@ -62,20 +62,22 @@
       "requested_slowdown": 3.0,
       "requested_visible_repetitions": 1,
       "runtime_repetitions": 3,
-      "technique": "Animate only the fully stretched source range with repeated holds.",
+      "achieved_slowdown": null,
+      "technique": "Preserve one complete source stretch cycle in every runtime cycle.",
       "waving_source_indices": [
-        6,
-        7,
-        7,
-        6
+        0,
+        5,
+        10,
+        16
       ],
       "jumping_source_indices": [
-        6,
-        7,
-        7,
-        7,
-        6
-      ]
+        0,
+        4,
+        8,
+        12,
+        16
+      ],
+      "limitation": "The runtime still repeats the complete cycle three times."
     },
     "seated_idle": {
       "affected_states": [
@@ -141,10 +143,10 @@
       "state": "waving",
       "source_state": "stretch",
       "source_indices": [
-        6,
-        7,
-        7,
-        6
+        0,
+        5,
+        10,
+        16
       ],
       "mirrored": false
     },
@@ -152,11 +154,11 @@
       "state": "jumping",
       "source_state": "stretch",
       "source_indices": [
-        6,
-        7,
-        7,
-        7,
-        6
+        0,
+        4,
+        8,
+        12,
+        16
       ],
       "mirrored": false
     },
@@ -603,13 +605,13 @@
       "row": 3,
       "column": 0,
       "source_state": "stretch",
-      "source_index": 6,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_6.png",
-      "source_sha256": "071a2b23d3662c0b72458882049571ca30fc19d6ebd779cb17485430e72ffadb",
+      "source_index": 0,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_0.png",
+      "source_sha256": "de1230612bb6ade6fd60b68967612357bad61f4078490c55c8fd0dba3530b2e1",
       "source_alpha_box": [
         64,
-        84,
-        220,
+        68,
+        208,
         168
       ],
       "mirrored": false
@@ -619,13 +621,13 @@
       "row": 3,
       "column": 1,
       "source_state": "stretch",
-      "source_index": 7,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_7.png",
-      "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
+      "source_index": 5,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_5.png",
+      "source_sha256": "0dc0548f3855e4bad10f58228f38ec855f3742e34ca04632748b1e2dcd4ca65f",
       "source_alpha_box": [
         64,
-        88,
-        220,
+        80,
+        216,
         168
       ],
       "mirrored": false
@@ -635,8 +637,8 @@
       "row": 3,
       "column": 2,
       "source_state": "stretch",
-      "source_index": 7,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_7.png",
+      "source_index": 10,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_10.png",
       "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
       "source_alpha_box": [
         64,
@@ -651,13 +653,13 @@
       "row": 3,
       "column": 3,
       "source_state": "stretch",
-      "source_index": 6,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_6.png",
-      "source_sha256": "071a2b23d3662c0b72458882049571ca30fc19d6ebd779cb17485430e72ffadb",
+      "source_index": 16,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_16.png",
+      "source_sha256": "de1230612bb6ade6fd60b68967612357bad61f4078490c55c8fd0dba3530b2e1",
       "source_alpha_box": [
         64,
-        84,
-        220,
+        68,
+        208,
         168
       ],
       "mirrored": false
@@ -667,13 +669,13 @@
       "row": 4,
       "column": 0,
       "source_state": "stretch",
-      "source_index": 6,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_6.png",
-      "source_sha256": "071a2b23d3662c0b72458882049571ca30fc19d6ebd779cb17485430e72ffadb",
+      "source_index": 0,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_0.png",
+      "source_sha256": "de1230612bb6ade6fd60b68967612357bad61f4078490c55c8fd0dba3530b2e1",
       "source_alpha_box": [
         64,
-        84,
-        220,
+        68,
+        208,
         168
       ],
       "mirrored": false
@@ -683,13 +685,13 @@
       "row": 4,
       "column": 1,
       "source_state": "stretch",
-      "source_index": 7,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_7.png",
-      "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
+      "source_index": 4,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_4.png",
+      "source_sha256": "36795810a3e376786a4fc125587bd6a25431bb9f9a727693b1cf58753bde018b",
       "source_alpha_box": [
-        64,
-        88,
-        220,
+        68,
+        80,
+        212,
         168
       ],
       "mirrored": false
@@ -699,8 +701,8 @@
       "row": 4,
       "column": 2,
       "source_state": "stretch",
-      "source_index": 7,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_7.png",
+      "source_index": 8,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_8.png",
       "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
       "source_alpha_box": [
         64,
@@ -715,8 +717,8 @@
       "row": 4,
       "column": 3,
       "source_state": "stretch",
-      "source_index": 7,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_7.png",
+      "source_index": 12,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_12.png",
       "source_sha256": "16e03301a40d6d23612484ecbbecbb13bde399be305d5ccb6ad09e86bb1c820c",
       "source_alpha_box": [
         64,
@@ -731,13 +733,13 @@
       "row": 4,
       "column": 4,
       "source_state": "stretch",
-      "source_index": 6,
-      "source_path": "references/cat-orange/stretch/cat_orange_stretch_6.png",
-      "source_sha256": "071a2b23d3662c0b72458882049571ca30fc19d6ebd779cb17485430e72ffadb",
+      "source_index": 16,
+      "source_path": "references/cat-orange/stretch/cat_orange_stretch_16.png",
+      "source_sha256": "de1230612bb6ade6fd60b68967612357bad61f4078490c55c8fd0dba3530b2e1",
       "source_alpha_box": [
         64,
-        84,
-        220,
+        68,
+        208,
         168
       ],
       "mirrored": false

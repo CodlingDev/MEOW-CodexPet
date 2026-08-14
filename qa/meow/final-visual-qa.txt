@@ -1,4 +1,4 @@
 visual_qa=pass
-qa_note=waving·jumping은 6→7 유지→6의 미세한 하강·복귀가 자연스럽고 반복 경계 점프·크기 튐·역재생이 없으며 running·review도 각 자세의 3프레임 유지로 충분히 느려졌습니다.
+qa_note=waving과 jumping 모두 시작→하강→완전 신장→복귀가 완결되며 마지막 자세가 첫 자세와 일치해 경계 점프·역재생·잘림·크기 튐 없이 자연스럽게 반복됩니다.
 review_warnings=none
 repair_notes=none
